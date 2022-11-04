@@ -16,7 +16,7 @@ class TestBugs(unittest.TestCase):
 
         apply_plone_registry_monkey(
             {
-                f"/{self.portal.getId()}/portal_registry": {
+                "/{}/portal_registry".format(self.portal.getId()): {
                     "plone.smtp_host": "smtp.example.org",
                 }
             }

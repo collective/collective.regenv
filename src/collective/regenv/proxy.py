@@ -25,7 +25,7 @@ class RecordsProxy(_RecordsBase):
         return self._records._fields
 
     def get_value_from_overrides(self, name):
-        registry_path = f"{self._portal_path}/{self._records.__parent__.id}"
+        registry_path = "{}/{}".format(self._portal_path, self._records.__parent__.id)
         if registry_path in self._overrides:
             if name in self._overrides[registry_path]:
                 return self._overrides[registry_path][name]
