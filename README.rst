@@ -2,31 +2,34 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-.. image:: https://travis-ci.org/collective/collective.regenv.svg?branch=master
-    :target: https://travis-ci.org/collective/collective.regenv
-
-.. image:: https://coveralls.io/repos/github/collective/collective.regenv/badge.svg?branch=master
-    :target: https://coveralls.io/github/collective/collective.regenv?branch=master
-    :alt: Coveralls
-
 .. image:: https://img.shields.io/pypi/v/collective.regenv.svg
     :target: https://pypi.python.org/pypi/collective.regenv/
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/status/collective.regenv.svg
-    :target: https://pypi.python.org/pypi/collective.regenv
-    :alt: Egg Status
+.. image:: https://img.shields.io/pypi/pyversions/collective.regenv.svg?style=plastic
+    :target: https://pypi.python.org/pypi/collective.regenv/
+    :alt: Supported - Python Versions
 
-.. image:: https://img.shields.io/pypi/pyversions/collective.regenv.svg?style=plastic   :alt: Supported - Python Versions
-
+.. image:: https://img.shields.io/pypi/dm/collective.regenv.svg
+    :target: https://pypi.python.org/pypi/collective.regenv/
+    :alt: Number of PyPI downloads
+    
 .. image:: https://img.shields.io/pypi/l/collective.regenv.svg
     :target: https://pypi.python.org/pypi/collective.regenv/
     :alt: License
 
+.. image:: https://github.com/collective/collective.regenv/actions/workflows/tests.yml/badge.svg
+    :target: https://github.com/collective/collective.regenv/actions
+    :alt: Tests
 
-===================
+.. image:: https://coveralls.io/repos/github/collective/collective.regenv/badge.svg?branch=main
+    :target: https://coveralls.io/github/collective/collective.regenv?branch=main
+    :alt: Coverage
+
+
+=================
 collective.regenv
-===================
+=================
 
 Tell me what your product does
 

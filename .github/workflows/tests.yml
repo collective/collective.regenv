@@ -14,22 +14,20 @@ jobs:
         config:
         # [Python version, tox env]
         - ["2.7",  "py27-plone52"]
-        - ["3.6",  "py36-plone52"]
         - ["3.7",  "py37-plone52"]
         - ["3.8",  "py38-plone52"]
-        - ["3.7",  "py37-plone60"]
         - ["3.8",  "py38-plone60"]
         - ["3.9",  "py39-plone60"]
         - ["3.10",  "py310-plone60"]
     name: ${{ matrix.config[1] }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.config[0] }}
     - name: Pip cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ matrix.config[0] }}-${{ hashFiles('setup.*', 'tox.ini') }}
@@ -42,3 +40,17 @@ jobs:
         pip install tox
     - name: Test
       run: tox -e ${{ matrix.config[1] }}
+    - name: Coveralls
+      uses: AndreMiras/coveralls-python-action@v20201129
+      with:
+        parallel: true
+        flag-name: ${{ matrix.config[1] }}
+
+  coveralls_finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: AndreMiras/coveralls-python-action@v20201129
+      with:
+        parallel-finished: true
