@@ -1,0 +1,5 @@
+===================
+collective.regenv
+===================
+
+User documentation
