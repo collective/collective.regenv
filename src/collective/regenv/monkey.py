@@ -1,11 +1,10 @@
-from .proxy import _marker
-from .proxy import RecordsProxy
+from .registry import _marker
+from .registry import RecordsProxy
 import logging
-from plone.registry import Registry
-
-from Products.PluggableAuthService.plugins.BasePlugin import BasePlugin
-from plone.registry.registry import Records
 from OFS.PropertyManager import PropertyManager
+from plone.registry import Registry
+from plone.registry.registry import Records
+
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +28,7 @@ def apply_plone_registry_monkey(overrides):
     Registry.get = Registry_get
     Registry.__getitem__ = Registry__getitem__
 
-    logger.info("monkey patches applied")
+    logger.info("monkey patches for portal_registry applied")
 
 
 def apply_propertymanager_monkey(overrides):
