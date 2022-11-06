@@ -1,4 +1,4 @@
-from collective.regenv.proxy import apply_plone_registry_monkey
+from collective.regenv.monkey import apply_plone_registry_monkey
 from collective.regenv.testing import COLLECTIVE_REGISTRY_INTEGRATION_TESTING
 from plone import api
 

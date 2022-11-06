@@ -1,0 +1,18 @@
+defaults: &defaults
+    plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies:
+        - http://localhost:8000
+        - http://localhost:8001
+    plone.app.theming.interfaces.IThemeSettings.hostnameBlacklist:
+        - 127.0.0.1
+        - notheme.example.org
+
+/Plone/portal_registry:
+    <<: *defaults
+
+/Plone2/portal_registry:
+    <<: *defaults
+    plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies:
+        - http://localhost:9000
+
+/Plone/acl_users/oidc:
+  issuer: https://idp.example.org
