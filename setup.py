@@ -38,7 +38,7 @@ setup(
     author_email='mauro.amico@gmail.com',
     url='https://github.com/collective/collective.regenv',
     project_urls={
-        'PyPI': 'https://pypi.python.org/pypi/collective.regenv',
+        'PyPI': 'https://pypi.org/project/collective.regenv/',
         'Source': 'https://github.com/collective/collective.regenv',
         'Tracker': 'https://github.com/collective/collective.regenv/issues',
         # 'Documentation': 'https://collective.regenv.readthedocs.io/en/latest/',
@@ -60,10 +60,6 @@ setup(
     extras_require={
         'test': [
             'plone.app.testing',
-            # Plone KGS does not use this version, because it would break
-            # Remove if your package shall be part of coredev.
-            # plone_coredev tests as of 2016-04-01.
-            'plone.testing>=5.0.0',
         ],
     },
     entry_points="""
