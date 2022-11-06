@@ -3,19 +3,19 @@
    This text does not appear on pypi or github. It is a comment.
 
 .. image:: https://img.shields.io/pypi/v/collective.regenv.svg
-    :target: https://pypi.python.org/pypi/collective.regenv/
+    :target: https://pypi.org/project/collective.regenv/
     :alt: Latest Version
 
 .. image:: https://img.shields.io/pypi/pyversions/collective.regenv.svg?style=plastic
-    :target: https://pypi.python.org/pypi/collective.regenv/
+    :target: https://pypi.org/project/collective.regenv/
     :alt: Supported - Python Versions
 
 .. image:: https://img.shields.io/pypi/dm/collective.regenv.svg
-    :target: https://pypi.python.org/pypi/collective.regenv/
+    :target: https://pypi.org/project/collective.regenv/
     :alt: Number of PyPI downloads
-    
+
 .. image:: https://img.shields.io/pypi/l/collective.regenv.svg
-    :target: https://pypi.python.org/pypi/collective.regenv/
+    :target: https://pypi.org/project/collective.regenv/
     :alt: License
 
 .. image:: https://github.com/collective/collective.regenv/actions/workflows/tests.yml/badge.svg
@@ -31,12 +31,23 @@
 collective.regenv
 =================
 
-Tell me what your product does
+This product allows to override the values stored in the portal registry
+with values defined on a local file
+defined in an environment variable called ``PLONE_REGISTRY_YAML``.
+
 
 Features
 --------
 
-- Can be bullet points
+Using this product you can:
+
+1. have different values for development and production environments
+   (think about the ``MailHost`` settings,
+   connection parameters to external services,
+   etc.)
+
+2. have different values for different instances in the same buildout,
+   allowing for example to toggle features on and off for A/B testing.
 
 
 Documentation
@@ -88,7 +99,7 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.regenv/issues
 - Source Code: https://github.com/collective/collective.regenv
-- Documentation: https://docs.plone.org/foo/bar
+- Documentation: https://pypi.org/project/collective.regenv/
 
 
 License
