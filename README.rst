@@ -32,9 +32,11 @@ collective.regenv
 =================
 
 This product allows to override the values stored in the portal registry
-with values defined on a local file
+and property manager object (i.e. a PAS plugin) with values defined on a local file
 defined in an environment variable called ``PLONE_REGISTRY_YAML``.
 
+When it comes to PropertyManager, this product actually only works if you use the accessor
+``getProperty`` to read properties.
 
 Features
 --------
