@@ -65,7 +65,7 @@ def apply_propertymanager_monkey(overrides):
         """
         # return tuple(dict.copy() for dict in self._propertyMap())
         registry_path = "/".join(self.getPhysicalPath())
-        logger.info("[DEBUG] propertyMap %s %s", self, self._properties, registry_path)
+        logger.debug("propertyMap %s %s", self, self._properties, registry_path)
         prop_overrides = overrides.get(registry_path)
         pmap = []
         for dict in self._propertyMap():
