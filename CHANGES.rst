@@ -5,7 +5,8 @@ Changelog
 1.0.0a2 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Fix monkeys init
+  [mamico]
 
 
 1.0.0a1 (2022-12-27)
