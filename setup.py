@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='collective.regenv',
-    version='1.0.0a1',
+    version='1.0.0a2.dev0',
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
