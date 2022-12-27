@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a2 (unreleased)
+1.0.0a2 (2022-12-27)
 --------------------
 
 - Fix monkeys init
