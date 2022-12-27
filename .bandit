@@ -1,0 +1,2 @@
+[bandit]
+exclude = src/collective/regenv/locales
