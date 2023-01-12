@@ -5,6 +5,4 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.regenv">
 
-  <i18n:registerTranslations directory="locales" />
-
 </configure>
