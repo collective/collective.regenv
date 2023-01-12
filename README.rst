@@ -75,6 +75,12 @@ Registry overrides should be in a YAML file::
         plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies:
             - http://localhost:9000
 
+    /Plone/acl_users/oidc:
+        issuer:
+            http://localhost:1234/realms/plone/
+        client_id:
+            plone
+
 Run zope instance with environment pointing to the YAML file, for example::
 
     PLONE_REGISTRY_YAML=$(pwd)/sample.yaml bin/instance fg
@@ -86,7 +92,7 @@ Or using the docker image, for example::
         -e PLONE_REGISTRY_YAML=/app/registry.yaml \
         -v$(pwd)/sample.yaml:/app/registry.yaml \
         plone/plone-backend:latest
- 
+
 Installation
 ------------
 
