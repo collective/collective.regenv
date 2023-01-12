@@ -38,10 +38,10 @@ def apply_propertymanager_monkey(overrides):
     def PropertyManager_getProperty(self, id, d=None):
         registry_path = "/".join(self.getPhysicalPath())
         logger.debug("getProperty %s %s %s", self, registry_path, id)
-        if registry_path in overrides:
-            if id in overrides[registry_path]:
-                return overrides[registry_path][id]
-        return self._orig_getProperty(id, d)
+        try:
+            return overrides[registry_path][id]
+        except KeyError:
+            return self._orig_getProperty(id, d)
 
     # TODO: security decorator
     # @security.protected(access_contents_information)

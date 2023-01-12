@@ -5,6 +5,9 @@ Changelog
 1.0.0a3 (unreleased)
 --------------------
 
+- Get overridden keys more efficiently.
+  [maurits]
+
 - Fix ``python_requires`` metadata.
   [maurits]
 
