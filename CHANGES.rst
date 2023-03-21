@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0.0a3 (unreleased)
---------------------
+1.0.0rc1 (2023-03-21)
+---------------------
 
 - Get overridden keys more efficiently.
   [maurits]
