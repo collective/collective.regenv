@@ -32,7 +32,6 @@ def apply_plone_registry_monkey(overrides):
 
 
 def apply_propertymanager_monkey(overrides):
-
     # TODO: security decorator
     # @security.protected(access_contents_information)
     def PropertyManager_getProperty(self, id, d=None):
