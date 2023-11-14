@@ -5,8 +5,8 @@ Changelog
 1.0.0rc2 (unreleased)
 ---------------------
 
-- Nothing changed yet.
-
+- Add another environment variable to get the YAML file content from
+  [erral]
 
 1.0.0rc1 (2023-03-21)
 ---------------------

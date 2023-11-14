@@ -10,9 +10,16 @@ import yaml
 _ = MessageFactory("collective.regenv")
 
 
+registry = None
+
 if os.environ.get("PLONE_REGISTRY_YAML"):
     with open(os.environ.get("PLONE_REGISTRY_YAML")) as fh:
         registry = yaml.safe_load(fh)
+
+if os.environ.get("PLONE_REGISTRY_YAML_CONTENT"):
+    registry = yaml.safe_load(os.environ.get("PLONE_REGISTRY_YAML_CONTENT"))
+
+if registry is not None:
     if not isinstance(registry, dict):
         raise ValueError(
             "PLONE_REGISTRY_YAML must point to a YAML file with a dictionary"
