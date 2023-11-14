@@ -94,8 +94,10 @@ Or using the docker image, for example::
         plone/plone-backend:latest
 
 
-Alternatively you can add the contents of the YAML file in an environment variable called PLONE_REGISTRY_YAML_CONTENT
-and pass the values directly. This way you do not need to mount a volume with the configuration file. For example::
+Alternatively you can add the contents of the YAML file in an environment
+variable called `PLONE_REGISTRY_YAML_CONTENT` and pass the values directly.
+This way you do not need to mount a volume with the configuration file.
+For example::
 
     export PLONE_REGISTRY_YAML_CONTENT=$(cat sample.yaml)
     docker run -p 8080:8080 \

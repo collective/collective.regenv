@@ -16,7 +16,7 @@ if os.environ.get("PLONE_REGISTRY_YAML"):
     with open(os.environ.get("PLONE_REGISTRY_YAML")) as fh:
         registry = yaml.safe_load(fh)
 
-if os.environ.get("PLONE_REGISTRY_YAML_CONTENT"):
+elif os.environ.get("PLONE_REGISTRY_YAML_CONTENT"):
     registry = yaml.safe_load(os.environ.get("PLONE_REGISTRY_YAML_CONTENT"))
 
 if registry is not None:
