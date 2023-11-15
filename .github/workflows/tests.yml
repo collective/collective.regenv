@@ -13,7 +13,7 @@ jobs:
       matrix:
         config:
         # [Python version, tox env]
-        - ["2.7",  "py27-plone52"]
+        # - ["2.7",  "py27-plone52"]
         - ["3.7",  "py37-plone52"]
         - ["3.8",  "py38-plone52"]
         - ["3.8",  "py38-plone60"]
