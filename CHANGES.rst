@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added a viewlet that warns the admins that the site is using collective.regenv
+  [ale-rt]
 
 
 1.0.0 (2023-11-15)

@@ -1,0 +1,24 @@
+<dl class="portalMessage warning"
+    role="status"
+    tal:condition="view/available"
+    i18n:domain="collective.regenv"
+>
+  <dt></dt>
+  <dd>
+    <tal:i18n i18n:translate="message_collective_regenv_active">
+      <a class="external-link"
+         href="https://pypi.org/project/collective.regenv/"
+         target="_blank"
+         i18n:name="collective_regenv"
+      >
+        collective.regenv
+      </a>
+      is active on this site.
+    </tal:i18n>
+    <a href="${here/portal_url}/@@acknowledge_collective_regenv"
+       i18n:translate="label_dismiss"
+    >
+      Dismiss this message.
+    </a>
+  </dd>
+</dl>
