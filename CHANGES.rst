@@ -7,6 +7,8 @@ Changelog
 
 - Added a viewlet that warns the admins that the site is using collective.regenv
   [ale-rt]
+- Fix plone.api.exc.CannotGetPortalError on start - refs #6
+  [avoinea]
 
 
 1.0.0 (2023-11-15)

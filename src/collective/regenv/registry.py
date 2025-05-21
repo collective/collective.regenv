@@ -1,6 +1,7 @@
 from plone import api
 from plone.registry import Record
 from plone.registry.registry import _Records as _RecordsBase
+import Zope2
 
 import logging
 
@@ -13,7 +14,7 @@ class RecordsProxy(_RecordsBase):
     def __init__(self, _records, overrides):
         self._records = _records
         self._overrides = overrides
-        self._portal_path = "/".join(api.portal.get().getPhysicalPath())
+        self._portal_path = self._get_path
 
     @property
     def _values(self):
@@ -22,6 +23,17 @@ class RecordsProxy(_RecordsBase):
     @property
     def _fields(self):
         return self._records._fields
+
+    @property
+    def _get_path(self):
+        try:
+            return "/".join(api.portal.get().getPhysicalPath())
+        except Exception as err:
+            logger.exception("Error getting portal path: %s", err)
+            app = Zope2.app()
+            for portal in app.objectValues("Plone Site"):
+                return "/".join(portal.getPhysicalPath())
+        return ""
 
     def get_value_from_overrides(self, name):
         registry_path = "{}/{}".format(self._portal_path, self._records.__parent__.id)
