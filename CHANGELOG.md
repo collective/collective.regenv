@@ -9,6 +9,35 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a1 (2026-02-23)
+
+
+### Breaking changes:
+
+- Drop support for Python 2.7. @ericof 
+- Drop support for Python 3.8. @ericof 
+- Drop support for Python 3.9. @ericof 
+- Drop support to Plone 5.2. @ericof 
+
+
+### New features:
+
+- Add support for Python 3.12. @ericof 
+- Add support for Python 3.13. @ericof 
+- Add support to Plone 6.1 @ericof 
+- Add support to Plone 6.2 @ericof 
+- Drop support for Python 3.10. @ericof 
+
+
+### Internal:
+
+- Update package structure to match the latest template adopted by the Plone community. @ericof [#8](https://github.com/collective/collective.regenv/issues/8)
+
+
+### Tests
+
+- Use pytest instead of unittest. @ericof 
+
 ## 1.0.1 (unreleased)
 
 - Added a viewlet that warns the admins that the site is using collective.regenv. @ale-rt

@@ -3,7 +3,7 @@
 import logging
 
 
-__version__ = "2.0.0a0"
+__version__ = "2.0.0a1"
 
 PACKAGE_NAME = "collective.regenv"
 
