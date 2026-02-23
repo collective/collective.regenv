@@ -1,0 +1,13 @@
+defaults: &defaults
+    plone.site_title: Novo site Plone
+    plone.available_languages:
+        - pt-br
+        - es
+        - it
+    plone.default_language: pt-br
+
+/plone/portal_registry:
+    <<: *defaults
+
+/Plone/portal_registry:
+    <<: *defaults

@@ -1,0 +1,186 @@
+[project]
+name = "collective.regenv"
+dynamic = ["version"]
+description = "Override Plone registry settings with environment variables."
+readme = "README.md"
+license = "GPL-2.0-only"
+requires-python = ">=3.11"
+authors = [
+    { name = "mamico", email = "mauro.amico@gmail.com" },
+]
+keywords = [
+    "CMS",
+    "Plone",
+    "Python",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
+    "Framework :: Plone :: Addon",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "Products.CMFPlone",
+    "plone.api",
+    "plone.restapi",
+        'plone.registry',
+        'PyYAML',
+]
+
+[project.optional-dependencies]
+test = [
+    "horse-with-no-namespace",
+    "plone.app.testing",
+    "plone.classicui","plone.restapi[test]",
+    "pytest",
+    "pytest-cov",
+    "pytest-plone>=1.0.0a2",
+]
+release = [
+    "zest.releaser[recommended]",
+    "zestreleaser.towncrier",
+    "zest.pocompile",
+]
+
+[project.urls]
+Homepage = "https://github.com/collective/collective.regenv"
+PyPI = "https://pypi.org/project/collective.regenv"
+Source = "https://github.com/collective/collective.regenv"
+Tracker = "https://github.com/collective/collective.regenv/issues"
+
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+
+[tool.uv]
+managed = false
+
+[tool.hatch.version]
+path = "src/collective/regenv/__init__.py"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+strict-naming = true
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/collective"]
+
+[tool.towncrier]
+directory = "news/"
+filename = "CHANGELOG.md"
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = "## {version} ({project_date})"
+template = "news/.changelog_template.jinja"
+issue_format = "[#{issue}](https://github.com/collective/collective.regenv/issues/{issue})"
+underlines = ["", "", ""]
+
+[[tool.towncrier.type]]
+directory = "breaking"
+name = "Breaking changes:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New features:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug fixes:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "internal"
+name = "Internal:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "documentation"
+name = "Documentation:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "tests"
+name = "Tests"
+showcontent = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+fix = true
+lint.select = [
+    # flake8-2020
+    "YTT",
+    # flake8-bandit
+    "S",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-comprehensions
+    "C4",
+    # flake8-debugger
+    "T10",
+    # flake8-simplify
+    "SIM",
+    # mccabe
+    "C90",
+    # pycodestyle
+    "E", "W",
+    # pyflakes
+    "F",
+    # pygrep-hooks
+    "PGH",
+    # pyupgrade
+    "UP",
+    # ruff
+    "RUF",
+]
+lint.ignore = [
+    # DoNotAssignLambda
+    "E731",
+]
+
+[tool.ruff.lint.isort]
+case-sensitive = false
+no-sections = true
+force-single-line = true
+from-first = true
+lines-after-imports = 2
+lines-between-types = 1
+order-by-type = false
+
+[tool.ruff.format]
+preview = true
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501", "RUF001", "S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source_pkgs = ["collective.regenv", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/collective/regenv/locales/*.py",
+]
+
+[tool.zest-releaser]
+python-file-with-version = "src/collective/regenv/__init__.py"

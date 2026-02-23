@@ -1,25 +1,8 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="untranslated"
-    >
+<configure xmlns="http://namespaces.zope.org/zope">
 
-  <browser:page
-      name="acknowledge_collective_regenv"
-      for="*"
-      class=".browser.AcknowledgeCollectiveRegenv"
-      permission="cmf.ManagePortal"
-      />
 
-  <browser:viewlet
-      name="collective.regenv.viewlet"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
-      class=".browser.RegenvViewlet"
-      template="templates/viewlet.pt"
-      permission="cmf.ManagePortal"
-      />
+  <include file="dependencies.zcml" />
+
+  <include package=".browser" />
 
 </configure>

@@ -1,0 +1,12 @@
+defaults: &defaults
+    plone.site_title: New Plone Site
+    plone.available_languages:
+        - eu
+        - de
+    plone.default_language: eu
+
+/plone/portal_registry:
+    <<: *defaults
+
+/Plone/portal_registry:
+    <<: *defaults
