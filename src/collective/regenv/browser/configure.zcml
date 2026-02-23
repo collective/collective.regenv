@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+  <browser:page
+      name="acknowledge_collective_regenv"
+      for="*"
+      class=".browser.AcknowledgeCollectiveRegenv"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:viewlet
+      name="collective.regenv.viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class=".browser.RegenvViewlet"
+      template="templates/viewlet.pt"
+      permission="cmf.ManagePortal"
+      />
+
+</configure>
