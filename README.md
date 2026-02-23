@@ -1,23 +1,18 @@
 <div align="center">
     <h1 align="center">collective.regenv</h1>
 </div>
-<div align="center">
+
 [![PyPI](https://img.shields.io/pypi/v/collective.regenv)](https://pypi.org/project/collective.regenv/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/collective.regenv)](https://pypi.org/project/collective.regenv/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/collective.regenv)](https://pypi.org/project/collective.regenv/)
 [![PyPI - License](https://img.shields.io/pypi/l/collective.regenv)](https://pypi.org/project/collective.regenv/)
 [![PyPI - Status](https://img.shields.io/pypi/status/collective.regenv)](https://pypi.org/project/collective.regenv/)
-
-
 [![PyPI - Plone Versions](https://img.shields.io/pypi/frameworkversions/plone/collective.regenv)](https://pypi.org/project/collective.regenv/)
 
 [![CI](https://github.com/collective/collective.regenv/actions/workflows/main.yml/badge.svg)](https://github.com/collective/collective.regenv/actions/workflows/main.yml)
 ![Code Style](https://img.shields.io/badge/Code%20Style-Black-000000)
-
 [![GitHub contributors](https://img.shields.io/github/contributors/collective/collective.regenv)](https://github.com/collective/collective.regenv)
 [![GitHub Repo stars](https://img.shields.io/github/stars/collective/collective.regenv?style=social)](https://github.com/collective/collective.regenv)
-
-</div>
 
 Override Plone registry settings with environment variables.
 
