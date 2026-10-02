@@ -79,6 +79,14 @@ class TestRegistryYamlPath:
             self.portal.portal_registry["non.existent.key"]
         assert str(exc_info.value) == "'non.existent.key'"
 
+    @pytest.mark.parametrize(
+        "key,expected_value",
+        PARAMETRIZE_TESTS["yaml_path"],
+    )
+    def test_registry_record_value(self, key: str, expected_value: str | list[str]):
+        """The record itself carries the override, not only ``registry.get``."""
+        assert self.portal.portal_registry.records[key].value == expected_value
+
 
 class TestRegistryYamlFromVar:
     @pytest.fixture(autouse=True)
@@ -107,3 +115,11 @@ class TestRegistryYamlFromVar:
         with pytest.raises(KeyError) as exc_info:
             self.portal.portal_registry["non.existent.key"]
         assert str(exc_info.value) == "'non.existent.key'"
+
+    @pytest.mark.parametrize(
+        "key,expected_value",
+        PARAMETRIZE_TESTS["yaml_from_var"],
+    )
+    def test_registry_record_value(self, key: str, expected_value: str | list[str]):
+        """The record itself carries the override, not only ``registry.get``."""
+        assert self.portal.portal_registry.records[key].value == expected_value
