@@ -48,7 +48,9 @@ class RecordsProxy(_RecordsBase):
         record = self._records.__getitem__(name)
         if value is not _marker:
             # XXX: il field qui dovrebbe diventare readonly?
+            # Not bound to the registry: a bound record reads ``.value`` from
+            # the registry's own storage, which would hide the override from
+            # code that reads ``registry.records[name].value``.
             record = Record(record.field, value, _validate=False)
             record.__name__ = name
-            record.__parent__ = self._records.__parent__
         return record
