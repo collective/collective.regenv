@@ -1,0 +1,1 @@
+Return the overridden value from `registry.records[name].value`. The record handed back was bound to the registry, so it read the stored value instead of the override. @mamico
